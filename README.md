@@ -1,15 +1,10 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
+This tool is designed to compare a Magic deck to decks that have won tornaments and events. The higher percentage of similarity, the higher the decks rank.
 
+comparedecks.js
+This file checks a deck against a control. The player deck is compared to the deck Esper Control. The comparison is made and the file reports back a percentage along with a rank from 1 to 5.
 
-Hi there! Welcome to AWS Cloud9!
+getcards.js
+Checks the most recent tournament results at mtgtop8.com and reports back the cards in each deck.
 
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
-
-Happy coding!
-# deckranks
+getdecks.js
+Checks the most recent tournament results at mtgtop8.com and reports back a list of the decks and how they placed.
