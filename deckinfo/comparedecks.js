@@ -2,6 +2,14 @@ var scryfall = require("scryfall-sdk");
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/mydb";
 
+var basicLands = [
+	"Plains",
+	"Island",
+	"Swamp",
+	"Mountains",
+	"Forest"
+	];
+
 
 //The deck a player is checking (Esper Control.).	
 var playerDeck = [
@@ -38,10 +46,12 @@ MongoClient.connect(url, function(err, db) {
 	if (err) throw err;
 	var dbo = db.db("mydb");
 	for (let card of playerDeck){
-		dbo.collection("decks").find({"cards.name":card.name}).toArray(function(err, result) {
+		dbo.collection("decks").find({"cards.name":card.name}).project({"_id":1}).toArray(function(err, result) {
 		    if (err) throw err;
-			console.log("Looking for: " + card.name);
-			console.log(result);
+			if (basicLands.indexOf(card.name) == -1) {
+				console.log("Looking for: " + card.name);
+				console.log(result);
+			}
 		});
 	}
     db.close();
